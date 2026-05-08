@@ -7,30 +7,63 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <main class="container">
-    <section class="profile">
-      <div class="avatar-wrap">
-        <img src="headshot.jpg" alt="Kelly Barbeau" class="avatar" />
+
+  <!-- Nav -->
+  <header class="nav">
+    <span class="nav-name">Kelly Barbeau</span>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-photo-col">
+        <img src="headshot.png" alt="Kelly Barbeau" class="hero-photo" />
       </div>
+      <div class="hero-text-col">
+        <p class="hero-eyebrow">Product Leader · Fintech &amp; AI</p>
+        <h1 class="hero-name">Kelly<br/>Barbeau</h1>
+        <p class="hero-sub">10+ years building financial products at the intersection of AI, automation, and lending. Currently Director of Product at <span class="accent">Kiavi</span>.</p>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
 
-      <h1>Kelly Barbeau</h1>
-      <p class="title">Director of Product · Fintech &amp; AI</p>
-
-      <p class="bio">
-        Hi! I'm Kelly — a product leader with 10+ years of experience, the last 6 focused on lending and fintech. I thrive at the intersection of AI, automation, and financial services, transforming complex underwriting processes into seamless, scalable solutions. Currently Director of Product at Kiavi, where I lead AI-powered underwriting automation. When I'm not building fintech products, you'll find me skiing, hiking, or exploring new places with my daughter and husband.
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <p class="section-label">About</p>
+      <p class="about-bio">
+        I thrive at the intersection of fintech, AI, and automation — transforming complex lending and underwriting processes into seamless, scalable solutions. With a background in software engineering and product leadership, I bring a data-driven and technical approach to solving real-world financial challenges.
       </p>
+      <p class="about-bio">
+        At Kiavi, I manage a team of PMs and drive AI-powered underwriting automation that's reduced manual review time by 20% and accelerated loan approvals. When I'm not building fintech products, you'll find me skiing, hiking, or exploring new places with my daughter and husband.
+      </p>
+      <div class="about-links">
+        <a href="resume.html" class="btn-primary">View Resume →</a>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://x.com/kellymbarbeau" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/kmobarbeau/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <nav class="links">
-        <a href="resume.html" class="link-pill primary">Resume</a>
-        <a href="https://www.linkedin.com/in/kelly-barbeau/" class="link-pill" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/kellybarbeau" class="link-pill" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://x.com/kellymbarbeau" class="link-pill" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/kmobarbeau/" class="link-pill" target="_blank" rel="noopener">Instagram</a>
-      </nav>
-    </section>
-  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© 2025 Kelly Barbeau</span>
+    <span>Charlotte, NC</span>
+  </footer>
+
 </body>
 </html>
