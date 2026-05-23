@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel — Kelly Barbeau</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="nav">
+    <a href="index.html" class="nav-name">Kelly Barbeau</a>
+    <nav class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="travel.html" class="nav-active">Travel</a>
+      <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="travel-root"></main>
+
+  <footer class="footer">
+    <span>© 2025 Kelly Barbeau</span>
+    <span>Charlotte, NC</span>
+  </footer>
+
+  <script src="travel-data.js"></script>
+  <script>
+  (function () {
+    const data = window.TRAVEL_DATA || { guides: [], itineraries: [], wishlist: [] };
+
+    // ────── Helpers ──────
+
+    const root = document.getElementById("travel-root");
+
+    function getParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+
+    function formatVisited(visited) {
+      if (!visited || !visited.length) return "";
+      const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      return visited.map(d => {
+        const [y, m] = d.split("-");
+        return `${months[parseInt(m, 10)]} ${y}`;
+      }).join(" · ");
+    }
+
+    function categoryLabel(cat) {
+      const map = {
+        ski: "Skiing",
+        outdoors: "Outdoors",
+        cities: "U.S. Cities",
+        international: "International"
+      };
+      return map[cat] || cat;
+    }
+
+    // ────── Library view ──────
+
+    function renderLibrary() {
+      const categories = [
+        { id: "all",           label: "All" },
+        { id: "ski",           label: "Skiing" },
+        { id: "outdoors",      label: "Outdoors" },
+        { id: "cities",        label: "U.S. Cities" },
+        { id: "international", label: "International" },
+        { id: "itineraries",   label: "Itineraries" }
+      ];
+
+      const filterHtml = categories.map(c =>
+        `<button class="filter-chip" data-filter="${c.id}">${c.label}</button>`
+      ).join("");
+
+      const guideCards = data.guides.map(g => `
+        <a href="?guide=${g.slug}" class="dest-card" data-category="${g.category}">
+          <div class="dest-card-image trip-image-${g.gradient || 1}">
+            ${g.photoCard ? `<img src="${g.photoCard}" alt="${g.name}" class="dest-card-img" loading="lazy" />` : ""}
+          </div>
+          <div class="dest-card-body">
+            <p class="dest-card-cat">${categoryLabel(g.category)}</p>
+            <h3 class="dest-card-name">${g.name}</h3>
+            <p class="dest-card-meta">
+              <span>${g.country}</span>
+              ${g.visited ? `<span class="dest-card-dot">·</span><span>${formatVisited(g.visited)}</span>` : ""}
+            </p>
+          </div>
+        </a>
+      `).join("");
+
+      const itineraryCards = data.itineraries.map(it => `
+        <a href="?itinerary=${it.slug}" class="dest-card dest-card-itinerary" data-category="itineraries">
+          <div class="dest-card-image trip-image-${it.gradient || 1}"></div>
+          <div class="dest-card-body">
+            <p class="dest-card-cat">Itinerary · ${it.duration}</p>
+            <h3 class="dest-card-name">${it.name}</h3>
+            <p class="dest-card-meta"><span>${it.location}</span></p>
+          </div>
+        </a>
+      `).join("");
+
+      const wishlistHtml = data.wishlist.map(w => `
+        <li class="wishlist-row">
+          <span class="wishlist-name">${w.name}</span>
+          <span class="wishlist-location">${w.location || ""}</span>
+        </li>
+      `).join("");
+
+      root.innerHTML = `
+        <section class="travel-hero">
+          <div class="travel-hero-inner">
+            <p class="section-label">Travel</p>
+            <h1 class="travel-title">Places, <em>collected.</em></h1>
+            <p class="travel-tagline">A running set of guides and itineraries from places I've been — opinionated, slightly informal, written for friends who asked.</p>
+          </div>
+        </section>
+
+        <section class="library-section">
+          <div class="library-inner">
+            <div class="filter-bar">${filterHtml}</div>
+            <div class="card-grid">${guideCards}${itineraryCards}</div>
+          </div>
+        </section>
+
+        <section class="travel-wishlist">
+          <div class="wishlist-header">
+            <p class="section-label">Wishlist</p>
+            <h2 class="wishlist-title">Places, <em>queued.</em></h2>
+            <p class="wishlist-note">Saved for next time — a running list of where to go.</p>
+          </div>
+          <ul class="wishlist-list">${wishlistHtml}</ul>
+        </section>
+      `;
+
+      wireFilters();
+    }
+
+    function wireFilters() {
+      const chips = root.querySelectorAll(".filter-chip");
+      const cards = root.querySelectorAll(".dest-card");
+      const setActive = (filter) => {
+        chips.forEach(c => c.classList.toggle("filter-chip-active", c.dataset.filter === filter));
+        cards.forEach(card => {
+          const show = filter === "all" || card.dataset.category === filter;
+          card.classList.toggle("dest-card-hidden", !show);
+        });
+      };
+      chips.forEach(chip => chip.addEventListener("click", () => setActive(chip.dataset.filter)));
+      setActive("all");
+    }
+
+    // ────── Guide view ──────
+
+    function renderGuide(slug) {
+      const guide = data.guides.find(g => g.slug === slug);
+      if (!guide) { renderNotFound(); return; }
+
+      const sectionsHtml = guide.sections.map(sec => `
+        <section class="guide-section">
+          <h2 class="guide-section-title">${sec.title}</h2>
+          <ul class="guide-section-list">
+            ${sec.items.map(item => `
+              <li class="guide-item">
+                <div class="guide-item-name">
+                  ${item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${item.name}</a>` : item.name}
+                </div>
+                ${item.note ? `<p class="guide-item-note">${item.note}</p>` : ""}
+              </li>
+            `).join("")}
+          </ul>
+        </section>
+      `).join("");
+
+      root.innerHTML = `
+        <article class="guide-page">
+          <div class="guide-back">
+            <a href="travel.html">← All guides</a>
+          </div>
+
+          <header class="guide-hero">
+            <div class="guide-hero-image trip-image-${guide.gradient || 1}">
+              ${guide.photoHero ? `<img src="${guide.photoHero}" alt="${guide.name}" class="guide-hero-img" />` : ""}
+            </div>
+            <div class="guide-hero-text">
+              <p class="section-label">${categoryLabel(guide.category)}</p>
+              <h1 class="guide-title">${guide.name}</h1>
+              <p class="guide-meta">
+                <span>${guide.country}</span>
+                ${guide.visited ? `<span class="guide-meta-dot">·</span><span>Visited ${formatVisited(guide.visited)}</span>` : ""}
+              </p>
+              ${guide.intro ? `<p class="guide-intro">${guide.intro}</p>` : ""}
+            </div>
+          </header>
+
+          <div class="guide-body">${sectionsHtml}</div>
+
+          <div class="guide-back guide-back-bottom">
+            <a href="travel.html">← All guides</a>
+          </div>
+        </article>
+      `;
+    }
+
+    // ────── Itinerary view ──────
+
+    function renderItinerary(slug) {
+      const it = data.itineraries.find(i => i.slug === slug);
+      if (!it) { renderNotFound(); return; }
+
+      const daysHtml = it.days.map(day => `
+        <section class="itin-day">
+          <h2 class="itin-day-label">${day.label}</h2>
+          <ol class="itin-day-list">
+            ${day.items.map(line => `<li>${line}</li>`).join("")}
+          </ol>
+        </section>
+      `).join("");
+
+      root.innerHTML = `
+        <article class="guide-page">
+          <div class="guide-back">
+            <a href="travel.html">← All guides</a>
+          </div>
+
+          <header class="guide-hero">
+            <div class="guide-hero-image trip-image-${it.gradient || 1}"></div>
+            <div class="guide-hero-text">
+              <p class="section-label">Itinerary · ${it.duration}</p>
+              <h1 class="guide-title">${it.name}</h1>
+              <p class="guide-meta"><span>${it.location}</span></p>
+              ${it.intro ? `<p class="guide-intro">${it.intro}</p>` : ""}
+            </div>
+          </header>
+
+          <div class="guide-body">${daysHtml}</div>
+
+          <div class="guide-back guide-back-bottom">
+            <a href="travel.html">← All guides</a>
+          </div>
+        </article>
+      `;
+    }
+
+    // ────── Not found ──────
+
+    function renderNotFound() {
+      root.innerHTML = `
+        <section class="travel-hero">
+          <div class="travel-hero-inner">
+            <h1 class="travel-title">Not found.</h1>
+            <p class="travel-tagline"><a href="travel.html">← Back to all guides</a></p>
+          </div>
+        </section>
+      `;
+    }
+
+    // ────── Router ──────
+
+    const guideSlug = getParam("guide");
+    const itinSlug  = getParam("itinerary");
+
+    if (guideSlug)      renderGuide(guideSlug);
+    else if (itinSlug)  renderItinerary(itinSlug);
+    else                renderLibrary();
+  })();
+  </script>
+
+</body>
+</html>
