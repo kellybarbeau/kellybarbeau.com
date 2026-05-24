@@ -19,6 +19,7 @@
       <a href="index.html#about">About</a>
       <a href="resume.html">Resume</a>
       <a href="travel.html" class="nav-active">Travel</a>
+      <a href="momrecs.html">Mom Recs</a>
       <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
     </nav>
@@ -31,7 +32,7 @@
     <span>Charlotte, NC</span>
   </footer>
 
-  <script src="travel-data.js"></script>
+  <script src="travel-data.js?v=3"></script>
   <script>
   (function () {
     const data = window.TRAVEL_DATA || { guides: [], itineraries: [], wishlist: [] };
@@ -108,19 +109,12 @@
         </a>
       `).join("");
 
-      const wishlistHtml = data.wishlist.map(w => `
-        <li class="wishlist-row">
-          <span class="wishlist-name">${w.name}</span>
-          <span class="wishlist-location">${w.location || ""}</span>
-        </li>
-      `).join("");
-
       root.innerHTML = `
         <section class="travel-hero">
           <div class="travel-hero-inner">
             <p class="section-label">Travel</p>
             <h1 class="travel-title">Places, <em>collected.</em></h1>
-            <p class="travel-tagline">A running set of guides and itineraries from places I've been — opinionated, slightly informal, written for friends who asked.</p>
+            <p class="travel-tagline">I plan my vacation days like it's a part-time job. These are the guides — casual, opinionated, written for friends.</p>
           </div>
         </section>
 
@@ -129,15 +123,6 @@
             <div class="filter-bar">${filterHtml}</div>
             <div class="card-grid">${guideCards}${itineraryCards}</div>
           </div>
-        </section>
-
-        <section class="travel-wishlist">
-          <div class="wishlist-header">
-            <p class="section-label">Wishlist</p>
-            <h2 class="wishlist-title">Places, <em>queued.</em></h2>
-            <p class="wishlist-note">Saved for next time — a running list of where to go.</p>
-          </div>
-          <ul class="wishlist-list">${wishlistHtml}</ul>
         </section>
       `;
 
