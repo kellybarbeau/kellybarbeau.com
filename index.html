@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -28,16 +28,104 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-photo-col">
-        <img src="headshot.png" alt="Kelly Barbeau" class="hero-photo" />
-      </div>
       <div class="hero-text-col">
-        <p class="hero-eyebrow">Product Leader · Fintech &amp; AI</p>
-        <h1 class="hero-name">Kelly<br/>Barbeau</h1>
-        <p class="hero-sub">10+ years building financial products at the intersection of AI, automation, and lending. Currently Director of Product at <span class="accent">Kiavi</span>.</p>
+        <p class="hero-eyebrow">Product leader · Fintech, lending and AI</p>
+        <h1 class="hero-name">Hi, I'm Kelly.<br/><span class="hero-role">Director of Product.</span></h1>
+        <p class="hero-sub"><strong>10+ years</strong> building financial products at the intersection of AI, automation, and lending. Currently Director of Product at <strong>Kiavi</strong>, rebuilding origination as an AI-first underwriting platform.</p>
+        <p class="hero-meta"><span>Background</span>Software engineer · McGill · Wake Forest MBA</p>
+        <div class="hero-ctas">
+          <a href="#experience" class="btn-primary">See my work</a>
+          <a href="resume.html" class="btn-secondary">Resume</a>
+        </div>
+      </div>
+      <div class="hero-photo-col">
+        <img src="img/hero-portrait.webp" alt="Kelly Barbeau laughing while typing on her laptop" class="hero-photo" width="983" height="1100" />
       </div>
     </div>
-    <div class="hero-rule"></div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="highlights" aria-label="Highlights">
+    <p class="section-label">Highlights</p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <p class="stat-where">At Kiavi</p>
+        <p class="stat-num">80%</p>
+        <p class="stat-label">Less manual review time.</p>
+        <p class="stat-note">AI-powered underwriting automation that speeds up loan approvals.</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-where">At Accion</p>
+        <p class="stat-num">20%</p>
+        <p class="stat-label">Faster loan origination.</p>
+        <p class="stat-note">Led a full rewrite of the loan origination system onto React and AWS Lambda.</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-where">At Praxent</p>
+        <p class="stat-num">92%</p>
+        <p class="stat-label">Projects on time and on budget.</p>
+        <p class="stat-note">Across $3M+ in client portfolios and a $250K+ monthly budget.</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-where">At Nuance</p>
+        <p class="stat-num">25,000+</p>
+        <p class="stat-label">Call center agents served.</p>
+        <p class="stat-note">Led six enterprise implementations of FreeSpeech.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience" id="experience">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">Where I've worked.</h2>
+    <div class="job-list">
+      <div class="job">
+        <div>
+          <p class="job-company">Kiavi</p>
+          <p class="job-date">2022 to present</p>
+        </div>
+        <div>
+          <p class="job-role">Director of Product Management</p>
+          <p class="job-desc">Lead a team of PMs and own strategy for underwriting and risk automation, including automated KYC via Plaid, an instant ARV estimator, and GenAI document extraction. Joined as Principal PM, delivering instant loan decisioning with ML models and external data.</p>
+          <div class="job-tags"><span>AI underwriting</span><span>Risk automation</span><span>Team leadership</span></div>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <p class="job-company">Accion Opportunity Fund</p>
+          <p class="job-date">2021 to 2022</p>
+        </div>
+        <div>
+          <p class="job-role">Director of Product Management</p>
+          <p class="job-desc">Directed a complete rewrite of the loan origination system and shipped a risk scorecard API for cash-flow-based borrower assessment, replacing traditional credit scores.</p>
+          <div class="job-tags"><span>Loan origination</span><span>Risk scoring</span><span>Platform rebuild</span></div>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <p class="job-company">Praxent</p>
+          <p class="job-date">2017 to 2020</p>
+        </div>
+        <div>
+          <p class="job-role">Client Partner · Senior PM · Product Manager</p>
+          <p class="job-desc">Led cross-functional teams delivering fintech products across lending, insurance, and real estate, including Bungalo, a PropTech MVP shipped in under eight months.</p>
+          <div class="job-tags"><span>Fintech delivery</span><span>Client portfolios</span><span>MVPs</span></div>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <p class="job-company">Nuance Communications</p>
+          <p class="job-date">2016 to 2017</p>
+        </div>
+        <div>
+          <p class="job-role">Technical Consultant · Software Engineer</p>
+          <p class="job-desc">Promoted within nine months. Built backend features for a web app used by 14 of the top 15 U.S. banks.</p>
+          <div class="job-tags"><span>Java</span><span>Angular</span><span>Enterprise rollouts</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="experience-more"><a href="resume.html" class="text-link">Full resume →</a></p>
   </section>
 
   <!-- About -->
