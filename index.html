@@ -16,10 +16,11 @@
   <header class="nav">
     <span class="nav-name">Kelly Barbeau</span>
     <nav class="nav-links">
+      <a href="#projects">AI Projects</a>
       <a href="#about">About</a>
       <a href="resume.html">Resume</a>
-      <a href="travel.html">Travel</a>
-      <a href="momrecs.html">Mom Recs</a>
+      <!-- Hidden for now: <a href="travel.html">Travel</a> -->
+      <!-- Hidden for now: <a href="momrecs.html">Mom Recs</a> -->
       <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
     </nav>
@@ -29,12 +30,11 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text-col">
-        <p class="hero-eyebrow">Product leader · Fintech, lending and AI</p>
-        <h1 class="hero-name">Hi, I'm Kelly.<br/><span class="hero-role">Director of Product.</span></h1>
-        <p class="hero-sub"><strong>10+ years</strong> building financial products at the intersection of AI, automation, and lending. Currently Director of Product at <strong>Kiavi</strong>, rebuilding origination as an AI-first underwriting platform.</p>
-        <p class="hero-meta"><span>Background</span>Software engineer · McGill · Wake Forest MBA</p>
+        <h1 class="hero-name">Hi, I'm Kelly.<br/><span class="hero-role">I build useful things with AI.</span></h1>
+        <p class="hero-sub">I started as a <strong>software engineer</strong> and have spent <strong>10+ years</strong> since turning messy, manual processes into products people rely on, first as a client partner at a fintech consultancy and now leading product at <strong>Kiavi</strong>. There, I pushed for AI early, helped set how our product org uses it, and now lead the rebuild of loan origination as an AI-first underwriting platform. Outside work, I use AI to take on projects that used to need an expert and a big budget, then teach others to do the same.</p>
+        <p class="hero-meta">Product manager · Former engineer · MBA · Charlotte, NC</p>
         <div class="hero-ctas">
-          <a href="#experience" class="btn-primary">See my work</a>
+          <a href="#projects" class="btn-primary">See my AI projects</a>
           <a href="resume.html" class="btn-secondary">Resume</a>
         </div>
       </div>
@@ -46,7 +46,6 @@
 
   <!-- Highlights -->
   <section class="highlights" aria-label="Highlights">
-    <p class="section-label">Highlights</p>
     <div class="stat-grid">
       <div class="stat-card">
         <p class="stat-where">At Kiavi</p>
@@ -55,29 +54,163 @@
         <p class="stat-note">AI-powered underwriting automation that speeds up loan approvals.</p>
       </div>
       <div class="stat-card">
+        <p class="stat-where">At Praxent</p>
+        <p class="stat-num">$3M+</p>
+        <p class="stat-label">Client portfolios managed.</p>
+        <p class="stat-note">Delivered 92% of projects on time and under budget.</p>
+      </div>
+      <div class="stat-card">
         <p class="stat-where">At Accion</p>
         <p class="stat-num">20%</p>
         <p class="stat-label">Faster loan origination.</p>
-        <p class="stat-note">Led a full rewrite of the loan origination system onto React and AWS Lambda.</p>
+        <p class="stat-note">For a lender that funds and coaches small business owners.</p>
       </div>
       <div class="stat-card">
-        <p class="stat-where">At Praxent</p>
-        <p class="stat-num">92%</p>
-        <p class="stat-label">Projects on time and on budget.</p>
-        <p class="stat-note">Across $3M+ in client portfolios and a $250K+ monthly budget.</p>
+        <p class="stat-where">Side project</p>
+        <p class="stat-num">Days</p>
+        <p class="stat-label">Not months.</p>
+        <p class="stat-note">A five-room redesign I mocked up myself with AI, then finished in a few weeks.</p>
       </div>
-      <div class="stat-card">
-        <p class="stat-where">At Nuance</p>
-        <p class="stat-num">25,000+</p>
-        <p class="stat-label">Call center agents served.</p>
-        <p class="stat-note">Led six enterprise implementations of FreeSpeech.</p>
+    </div>
+  </section>
+
+  <!-- AI at work -->
+  <section class="section" id="ai-at-work">
+    <h2 class="section-title">Technical enough to build it. Practical enough to get people using it.</h2>
+    <p class="section-intro">I came up as a software engineer, writing backend code for a web app used by 14 of the top 15 U.S. banks, and I still work close to the technical details. That background is why I was early to bring AI into my day-to-day work, and why I care about helping teams adopt it well.</p>
+    <div class="card-row">
+      <div class="info-card">
+        <h3 class="info-card-title">Building AI into the product</h3>
+        <p class="info-card-text">At Kiavi I own the roadmap for underwriting and risk automation: AI-driven decisioning, external data and vendor integrations like automated identity checks, and AI that pulls key details out of borrower documents. Manual review time is down 80%.</p>
+      </div>
+      <div class="info-card">
+        <h3 class="info-card-title">Early adopter, then advocate</h3>
+        <p class="info-card-text">I started using AI in my own product work early, then pushed to make it a team habit. I advocate for shared AI best practices across our product org: what to use it for, how to check its work, and where it doesn't belong.</p>
+      </div>
+      <div class="info-card">
+        <h3 class="info-card-title">Bringing my team along</h3>
+        <p class="info-card-text">I took two of my direct reports through a 30-day AI course, so the habits stuck beyond me. More on that under <a href="#teaching" class="text-link">teaching</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI projects -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Things I've built with AI.</h2>
+    <p class="section-intro">Each project started with a real problem and a deadline, and ended with something finished: a printed book, a furnished house, a toolkit someone else can use.</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-title">Room Refresh: interior design without the designer</h3>
+        <div class="job-tags"><span>Process design</span><span>Connected tools</span><span>Reusable toolkit</span></div>
+      </div>
+      <p class="project-lede">Redesigning five rooms usually means hiring an interior designer: thousands of dollars and months of revisions before anything gets bought. I built a process that let me do it myself. It took <strong>days to mock up every room</strong> and <strong>a few weeks</strong> to buy, paint and install.</p>
+      <ol class="process">
+        <li><span class="process-step">1</span><div><p class="process-title">Gather taste</p><p class="process-text">Pulls a saved inspiration board straight from the source and turns hundreds of images into a shared style brief.</p></div></li>
+        <li><span class="process-step">2</span><div><p class="process-title">Shoot and measure</p><p class="process-text">Phone photos go in as-is and convert automatically. A short shoot guide gets the AI the angles it needs.</p></div></li>
+        <li><span class="process-step">3</span><div><p class="process-title">Mock up one change at a time</p><p class="process-text">A script sends each photo and a plain-English change to an image model's API, and saves every version next to the instructions that made it.</p></div></li>
+        <li><span class="process-step">4</span><div><p class="process-title">Turn decisions into a plan</p><p class="process-text">Approved looks become a shopping list with real products, vendors, budget ranges and the trades to book.</p></div></li>
+        <li><span class="process-step">5</span><div><p class="process-title">Hand it off</p><p class="process-text">Packaged as Room Refresh Starter, a playbook and prompt library anyone can run on their own home.</p></div></li>
+      </ol>
+      <p class="project-learned"><strong>What I learned:</strong> most of the value isn't in the model. It's in connecting the pieces (inspiration, photos, AI, vendors, budget) into one process a non-expert can follow.</p>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3 class="project-title">A picture book, written and illustrated with AI</h3>
+        <div class="job-tags"><span>Creative production</span><span>Character consistency</span><span>Print-ready output</span></div>
+      </div>
+      <div class="project-split">
+        <div>
+          <p class="project-lede">A one-of-a-kind, 36-page rhyming picture book made as a family Father's Day gift: the story of a tiny barnacle looking for her rock, with characters based on our daughter's real stuffed animals. It went from idea to a hardcover printed through Blurb.</p>
+          <ul class="project-list">
+            <li>A written character bible, style guide and page-by-page storyboard keep 18 illustrations consistent.</li>
+            <li>A script connects reference photos of the stuffed animals to an image model's API, then routes approved pages through upscaling and into the print vendor's exact layout specs.</li>
+          </ul>
+          <p class="project-learned"><strong>What I learned:</strong> consistency comes from writing the rules down first, not from a clever prompt.</p>
+        </div>
+        <div class="project-images">
+          <img src="img/projects/book-cover.webp" alt="Book cover: a smiling barnacle floating in sunlit water" width="1200" height="966" loading="lazy" />
+          <img src="img/projects/book-octopus.webp" alt="Book page: a friendly purple octopus holding shells and a starfish" width="1200" height="966" loading="lazy" />
+        </div>
+      </div>
+    </article>
+
+    <div class="placeholder-grid">
+      <article class="project project-placeholder">
+        <h3 class="project-title">Project with a friend</h3>
+        <p class="project-lede">Coming soon.</p>
+      </article>
+      <article class="project project-placeholder">
+        <h3 class="project-title">Project with a friend</h3>
+        <p class="project-lede">Coming soon.</p>
+      </article>
+      <article class="project project-placeholder">
+        <h3 class="project-title">Project with a friend</h3>
+        <p class="project-lede">Coming soon.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- How I work -->
+  <section class="section" id="how-i-work">
+    <h2 class="section-title">AI that sticks after I leave.</h2>
+    <p class="section-intro">I spent years as a client partner, taking a business problem from first pitch to delivered product. I bring the same approach to helping people adopt AI.</p>
+    <div class="card-row">
+      <div class="info-card">
+        <p class="info-card-num">1</p>
+        <h3 class="info-card-title">Start with the real problem</h3>
+        <p class="info-card-text">At Praxent, my job was to understand how a client's business actually ran and translate it into requirements a team could build. Same here: not "use AI," but the hours you lose every week.</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-num">2</p>
+        <h3 class="info-card-title">Build it together, in small pieces</h3>
+        <p class="info-card-text">Working software early, not a big plan. It's how we took a proptech idea to a live product in under eight months.</p>
+      </div>
+      <div class="info-card">
+        <p class="info-card-num">3</p>
+        <h3 class="info-card-title">Leave you with the playbook</h3>
+        <p class="info-card-text">Every project ends with the steps and know-how written down, so your team can run it without me. Room Refresh Starter is an example.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section class="section" id="teaching">
+    <h2 class="section-title">I like helping people get unstuck.</h2>
+    <div class="job-list">
+      <div class="job">
+        <div>
+          <p class="job-company">Factora</p>
+          <p class="job-date">Facilitator</p>
+        </div>
+        <div>
+          <p class="job-desc">I lead Wealth Circles, small-group discussions where women learn to build wealth and take control of their finances, and help grow Factora's corporate workshop program. It's the same skill as an AI workshop: take a topic people find intimidating, make it practical, and keep a room of non-experts engaged and accountable.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <p class="job-company">Couch to 5K for AI</p>
+          <p class="job-date">Team and friends</p>
+        </div>
+        <div>
+          <p class="job-desc">After taking <a href="https://couchto5k.ai/" target="_blank" rel="noopener" class="text-link">this 30-day course</a> of five-minute exercises that takes people from chatting with AI to building with it, I brought five people through it: two of my direct reports and three non-technical friends.</p>
+        </div>
+      </div>
+      <div class="job">
+        <div>
+          <p class="job-company">Mentoring and advising</p>
+          <p class="job-date">Kiavi and Praxent</p>
+        </div>
+        <div>
+          <p class="job-desc">I mentor the PMs on my team at Kiavi. At Praxent, I advised client teams on process, including a tech audit and Scrum coaching for a community bank.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Experience -->
-  <section class="experience" id="experience">
-    <p class="section-label">Experience</p>
+  <section class="section" id="experience">
     <h2 class="section-title">Where I've worked.</h2>
     <div class="job-list">
       <div class="job">
@@ -98,7 +231,7 @@
         </div>
         <div>
           <p class="job-role">Director of Product Management</p>
-          <p class="job-desc">Directed a complete rewrite of the loan origination system and shipped a risk scorecard API for cash-flow-based borrower assessment, replacing traditional credit scores.</p>
+          <p class="job-desc">Directed a complete rewrite of the loan origination system for a lender that funds and coaches small business owners, and shipped a risk scorecard API for cash-flow-based borrower assessment, replacing traditional credit scores.</p>
           <div class="job-tags"><span>Loan origination</span><span>Risk scoring</span><span>Platform rebuild</span></div>
         </div>
       </div>
@@ -109,8 +242,8 @@
         </div>
         <div>
           <p class="job-role">Client Partner · Senior PM · Product Manager</p>
-          <p class="job-desc">Led cross-functional teams delivering fintech products across lending, insurance, and real estate, including Bungalo, a PropTech MVP shipped in under eight months.</p>
-          <div class="job-tags"><span>Fintech delivery</span><span>Client portfolios</span><span>MVPs</span></div>
+          <p class="job-desc">Fintech consultancy serving banks, lenders and insurers. Ran client relationships end to end, from first pitch to contract to delivery. Managed $3M+ in client portfolios at a 65% gross margin and delivered 92% of projects on time and under budget. Highlights: took Bungalo (proptech) from idea to MVP in under eight months, led a tech audit and Scrum coaching for Austin Capital Bank, and built a compliance-driven insurance benefits platform.</p>
+          <div class="job-tags"><span>Client partnership</span><span>Discovery to delivery</span><span>Advising</span></div>
         </div>
       </div>
       <div class="job">
@@ -131,15 +264,15 @@
   <!-- About -->
   <section class="about" id="about">
     <div class="about-inner">
-      <p class="section-label">About</p>
+      <h2 class="section-title">A bit about me.</h2>
       <p class="about-bio">
         I've spent the last decade building financial products, mostly in lending. The work I like best is taking something slow and manual and figuring out how AI or automation can make it feel effortless. I came up as a software engineer, so I'm happiest when I'm close to the technical details.
       </p>
       <p class="about-bio">
-        At Kiavi, I lead a team of PMs and own the roadmap for rebuilding our origination system as an AI-first underwriting platform. I also spend a lot of time helping other teams figure out where AI actually fits into their workflows.
+        At Kiavi, I lead a team of PMs and own the roadmap for rebuilding our origination system as an AI-first underwriting platform. I also spend a lot of time helping other teams figure out where AI actually fits into their workflows, and lately I've been doing the same for friends and neighbors outside of work.
       </p>
       <p class="about-bio">
-        Off the clock, I'm a mom, a wife, and a chronic over-planner of vacations. Winters are for chairlifts, the rest of the year is mostly national parks, and I write about it all here.
+        Off the clock, I'm a mom, a wife, and a chronic over-planner of vacations.
       </p>
       <div class="about-links">
         <a href="resume.html" class="btn-primary">View Resume →</a>

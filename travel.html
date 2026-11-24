@@ -16,10 +16,11 @@
   <header class="nav">
     <a href="index.html" class="nav-name">Kelly Barbeau</a>
     <nav class="nav-links">
+      <a href="index.html#projects">AI Projects</a>
       <a href="index.html#about">About</a>
       <a href="resume.html">Resume</a>
-      <a href="travel.html" class="nav-active">Travel</a>
-      <a href="momrecs.html">Mom Recs</a>
+      <!-- Hidden for now: <a href="travel.html" class="nav-active">Travel</a> -->
+      <!-- Hidden for now: <a href="momrecs.html">Mom Recs</a> -->
       <a href="https://www.linkedin.com/in/kelly-barbeau/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/kellybarbeau" target="_blank" rel="noopener">GitHub</a>
     </nav>
@@ -112,7 +113,6 @@
       root.innerHTML = `
         <section class="travel-hero">
           <div class="travel-hero-inner">
-            <p class="section-label">Travel</p>
             <h1 class="travel-title">Places, <em>collected.</em></h1>
             <p class="travel-tagline">I plan my vacation days like it's a part-time job. These are the guides — casual, opinionated, written for friends.</p>
           </div>
@@ -176,7 +176,6 @@
               ${guide.photoHero ? `<img src="${guide.photoHero}" alt="${guide.name}" class="guide-hero-img" />` : ""}
             </div>
             <div class="guide-hero-text">
-              <p class="section-label">${categoryLabel(guide.category)}</p>
               <h1 class="guide-title">${guide.name}</h1>
               <p class="guide-meta">
                 <span>${guide.country}</span>
@@ -219,9 +218,8 @@
           <header class="guide-hero">
             <div class="guide-hero-image trip-image-${it.gradient || 1}"></div>
             <div class="guide-hero-text">
-              <p class="section-label">Itinerary · ${it.duration}</p>
               <h1 class="guide-title">${it.name}</h1>
-              <p class="guide-meta"><span>${it.location}</span></p>
+              <p class="guide-meta"><span>${it.location}</span><span class="guide-meta-dot">·</span><span>${it.duration}</span></p>
               ${it.intro ? `<p class="guide-intro">${it.intro}</p>` : ""}
             </div>
           </header>
